@@ -1,0 +1,8 @@
+#!/bin/bash
+device="Wacom Bamboo 16FG 4x5 Finger touch"
+state="`xsetwacom get "$device" touch`"
+if [ "$state" = "on" ] ; then
+	xsetwacom set "$device" touch off
+else
+	xsetwacom set "$device" touch on
+fi
